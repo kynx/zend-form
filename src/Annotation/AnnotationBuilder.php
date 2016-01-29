@@ -126,8 +126,8 @@ class AnnotationBuilder implements EventManagerAwareInterface, FormFactoryAwareI
             __CLASS__,
             get_class($this),
         ]);
-        $events->attach(new ElementAnnotationsListener());
-        $events->attach(new FormAnnotationsListener());
+        (new ElementAnnotationsListener())->attach($events);
+        (new FormAnnotationsListener())->attach($events);
         $this->events = $events;
         return $this;
     }
