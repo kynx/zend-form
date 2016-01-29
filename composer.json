@@ -14,28 +14,28 @@
     },
     "require": {
         "php": ">=5.5",
-        "zendframework/zend-inputfilter": "~2.5",
-        "zendframework/zend-hydrator": "~1.0",
-        "zendframework/zend-stdlib": "~2.7"
+        "zendframework/zend-inputfilter": "dev-sm-v2-v3 as 2.6.0",
+        "zendframework/zend-hydrator": "dev-sm3 as 1.0",
+        "zendframework/zend-stdlib": "dev-develop as 2.7"
     },
     "require-dev": {
         "doctrine/annotations": "~1.0",
-        "zendframework/zend-cache": "~2.5",
+        "zendframework/zend-cache": "dev-sm-v2-v3 as 2.6.0",
         "zendframework/zend-captcha": "~2.5",
         "zendframework/zend-code": "~2.5",
         "zendframework/zend-di": "~2.5",
-        "zendframework/zend-eventmanager": "~2.5",
-        "zendframework/zend-filter": "~2.5",
-        "zendframework/zend-i18n": "~2.5",
-        "zendframework/zend-mvc": "~2.5",
-        "zendframework/zend-servicemanager": "~2.5",
+        "zendframework/zend-eventmanager": "^2.6.2 || ^3.0",
+        "zendframework/zend-filter": "dev-v2-v3-compat as 2.6.0",
+        "zendframework/zend-i18n": "dev-feature/21 as 2.6.0",
+        "zendframework/zend-servicemanager": "dev-v3-aliases-property as 3.0",
         "zendframework/zend-session": "~2.5",
-        "zendframework/zend-text": "~2.5",
-        "zendframework/zend-validator": "~2.5",
-        "zendframework/zend-view": "~2.5",
-        "zendframework/zendservice-recaptcha": "*",
+        "zendframework/zend-text": "dev-sm-v2-v3 as 2.5.1",
+        "zendframework/zend-validator": "dev-v2-v3 as 2.5",
+        "zendframework/zend-view": "dev-develop as 2.5.3",
+        "zendframework/zendservice-recaptcha": "~2.0.1",
         "fabpot/php-cs-fixer": "1.7.*",
-        "phpunit/PHPUnit": "~4.0"
+        "phpunit/PHPUnit": "~4.0",
+        "kynx/servicemanager-migration": "dev-master"
     },
     "suggest": {
         "zendframework/zend-captcha": "Zend\\Captcha component",
@@ -58,7 +58,42 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ZendTest\\Form\\": "test/"
+            "ZendTest\\Form\\": "test/",
+            "ZendTest\\ZendServicemanager\\": "vendor/zendframework/zend-servicemanager/test/"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:kynx/zend-cache"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:kynx/zend-filter"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:weierophinney/zend-i18n"
+        },
+        {
+            "type" : "vcs",
+            "url" : "git@github.com:kynx/zend-inputfilter.git"
+        },
+        {
+            "type" : "vcs",
+            "url" : "git@github.com:kynx/zend-hydrator.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:kynx/zend-servicemanager"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:kynx/zend-text"
+        },
+        {
+            "type" : "vcs",
+            "url" : "git@github.com:kynx/zend-validator.git"
+        }
+    ]
 }
