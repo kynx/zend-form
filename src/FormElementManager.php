@@ -103,38 +103,38 @@ class FormElementManager extends AbstractPluginManager
      * @var array
      */
     protected $factories = [
-        Element\Button::class         => InvokableFactory::class,
-        Element\Captcha::class        => InvokableFactory::class,
-        Element\Checkbox::class       => InvokableFactory::class,
-        Element\Collection::class     => InvokableFactory::class,
-        Element\Color::class          => InvokableFactory::class,
-        Element\Csrf::class           => InvokableFactory::class,
-        Element\Date::class           => InvokableFactory::class,
-        Element\DateSelect::class     => InvokableFactory::class,
-        Element\DateTime::class       => InvokableFactory::class,
-        Element\DateTimeLocal::class  => InvokableFactory::class,
-        Element\DateTimeSelect::class => InvokableFactory::class,
-        Element::class                => InvokableFactory::class,
-        Element\Email::class          => InvokableFactory::class,
-        Fieldset::class               => InvokableFactory::class,
-        Element\File::class           => InvokableFactory::class,
-        Form::class                   => InvokableFactory::class,
-        Element\Hidden::class         => InvokableFactory::class,
-        Element\Image::class          => InvokableFactory::class,
-        Element\Month::class          => InvokableFactory::class,
-        Element\MonthSelect::class    => InvokableFactory::class,
-        Element\MultiCheckbox::class  => InvokableFactory::class,
-        Element\Number::class         => InvokableFactory::class,
-        Element\Password::class       => InvokableFactory::class,
-        Element\Radio::class          => InvokableFactory::class,
-        Element\Range::class          => InvokableFactory::class,
-        Element\Select::class         => InvokableFactory::class,
-        Element\Submit::class         => InvokableFactory::class,
-        Element\Text::class           => InvokableFactory::class,
-        Element\Textarea::class       => InvokableFactory::class,
-        Element\Time::class           => InvokableFactory::class,
-        Element\Url::class            => InvokableFactory::class,
-        Element\Week::class           => InvokableFactory::class,
+        Element\Button::class         => ElementFactory::class,
+        Element\Captcha::class        => ElementFactory::class,
+        Element\Checkbox::class       => ElementFactory::class,
+        Element\Collection::class     => ElementFactory::class,
+        Element\Color::class          => ElementFactory::class,
+        Element\Csrf::class           => ElementFactory::class,
+        Element\Date::class           => ElementFactory::class,
+        Element\DateSelect::class     => ElementFactory::class,
+        Element\DateTime::class       => ElementFactory::class,
+        Element\DateTimeLocal::class  => ElementFactory::class,
+        Element\DateTimeSelect::class => ElementFactory::class,
+        Element::class                => ElementFactory::class,
+        Element\Email::class          => ElementFactory::class,
+        Fieldset::class               => ElementFactory::class,
+        Element\File::class           => ElementFactory::class,
+        Form::class                   => ElementFactory::class,
+        Element\Hidden::class         => ElementFactory::class,
+        Element\Image::class          => ElementFactory::class,
+        Element\Month::class          => ElementFactory::class,
+        Element\MonthSelect::class    => ElementFactory::class,
+        Element\MultiCheckbox::class  => ElementFactory::class,
+        Element\Number::class         => ElementFactory::class,
+        Element\Password::class       => ElementFactory::class,
+        Element\Radio::class          => ElementFactory::class,
+        Element\Range::class          => ElementFactory::class,
+        Element\Select::class         => ElementFactory::class,
+        Element\Submit::class         => ElementFactory::class,
+        Element\Text::class           => ElementFactory::class,
+        Element\Textarea::class       => ElementFactory::class,
+        Element\Time::class           => ElementFactory::class,
+        Element\Url::class            => ElementFactory::class,
+        Element\Week::class           => ElementFactory::class,
     ];
 
     /**
@@ -257,11 +257,12 @@ class FormElementManager extends AbstractPluginManager
     }
 
     /**
-     * Attempt to create an instance via an invokable class
+     * Attempt to create an instance via an invokable class (v2)
      *
      * Overrides parent implementation by passing $creationOptions to the
      * constructor, if non-null.
      *
+     * @deprecated
      * @param  string $canonicalName
      * @param  string $requestedName
      * @return null|\stdClass
