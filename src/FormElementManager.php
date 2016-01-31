@@ -138,11 +138,18 @@ class FormElementManager extends AbstractPluginManager
     ];
 
     /**
-     * Don't share form elements by default
+     * Don't share form elements by default (v3)
      *
      * @var bool
      */
     protected $sharedByDefault = false;
+
+    /**
+     * Don't share form elements by default (v2)
+     *
+     * @var bool
+     */
+    protected $shareByDefault = false;
 
     protected $instanceOf = ElementInterface::class;
 
@@ -259,6 +266,8 @@ class FormElementManager extends AbstractPluginManager
     /**
      * Attempt to create an instance via an invokable class (v2)
      *
+     * This method is not used internally and only exists in case extending v2 class is calling it
+     *
      * Overrides parent implementation by passing $creationOptions to the
      * constructor, if non-null.
      *
@@ -270,6 +279,11 @@ class FormElementManager extends AbstractPluginManager
      */
     protected function createFromInvokable($canonicalName, $requestedName)
     {
+        trigger_error(sprintf(
+            'Usage of %s is deprecated since v3.0.0; please use aliases and factories instead',
+            __METHOD__
+        ), E_USER_DEPRECATED);
+
         $invokable = $this->invokableClasses[$canonicalName];
 
         if (null === $this->creationOptions

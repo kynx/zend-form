@@ -576,6 +576,23 @@ class Factory
     }
 
     /**
+     * Try to pull hydrator from service manager, or instantiates it from its name
+     *
+     * @param  string $hydratorName
+     * @return mixed
+     * @throws Exception\DomainException
+     */
+    protected function getHydratorFromName($hydratorName)
+    {
+        trigger_error(sprintf(
+            'Usage of %s is deprecated since v3.0.0; please use FormElementManager::getHydratorFromName() instead',
+            __METHOD__
+        ), E_USER_DEPRECATED);
+
+        return $this->getFormElementManager()->getHydratorFromName($hydratorName);
+    }
+
+    /**
      * Try to pull factory from service manager, or instantiates it from its name
      *
      * @param  string $factoryName
@@ -584,20 +601,11 @@ class Factory
      */
     protected function getFactoryFromName($factoryName)
     {
-        $services = $this->getFormElementManager()->getServiceLocator();
+        trigger_error(sprintf(
+            'Usage of %s is deprecated since v3.0.0; please use FormElementManager::getFactoryFromName() instead',
+            __METHOD__
+        ), E_USER_DEPRECATED);
 
-        if ($services && $services->has($factoryName)) {
-            return $services->get($factoryName);
-        }
-
-        if (!class_exists($factoryName)) {
-            throw new Exception\DomainException(sprintf(
-                'Expects string factory name to be a valid class name; received "%s"',
-                $factoryName
-            ));
-        }
-
-        $factory = new $factoryName;
-        return $factory;
+        return $this->getFormElementManager()->getFactoryFromName($factoryName);
     }
 }
