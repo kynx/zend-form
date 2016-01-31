@@ -37,6 +37,8 @@ class HelperConfig implements ConfigInterface
         'FormCaptcha'                => Helper\FormCaptcha::class,
         'captchadumb'                => Helper\Captcha\Dumb::class,
         'captcha_dumb'               => Helper\Captcha\Dumb::class,
+        // weird alias used by Zend\Captcha
+        'captcha/dumb'               => Helper\Captcha\Dumb::class,
         'CaptchaDumb'                => Helper\Captcha\Dumb::class,
         'captchaDumb'                => Helper\Captcha\Dumb::class,
         'formcaptchadumb'            => Helper\Captcha\Dumb::class,
@@ -44,6 +46,8 @@ class HelperConfig implements ConfigInterface
         'formCaptchaDumb'            => Helper\Captcha\Dumb::class,
         'FormCaptchaDumb'            => Helper\Captcha\Dumb::class,
         'captchafiglet'              => Helper\Captcha\Figlet::class,
+        // weird alias used by Zend\Captcha
+        'captcha/figlet'             => Helper\Captcha\Figlet::class,
         'captcha_figlet'             => Helper\Captcha\Figlet::class,
         'captchaFiglet'              => Helper\Captcha\Figlet::class,
         'CaptchaFiglet'              => Helper\Captcha\Figlet::class,
@@ -52,6 +56,8 @@ class HelperConfig implements ConfigInterface
         'formCaptchaFiglet'          => Helper\Captcha\Figlet::class,
         'FormCaptchaFiglet'          => Helper\Captcha\Figlet::class,
         'captchaimage'               => Helper\Captcha\Image::class,
+        // weird alias used by Zend\Captcha
+        'captcha/image'              => Helper\Captcha\Image::class,
         'captcha_image'              => Helper\Captcha\Image::class,
         'captchaImage'               => Helper\Captcha\Image::class,
         'CaptchaImage'               => Helper\Captcha\Image::class,
@@ -60,6 +66,8 @@ class HelperConfig implements ConfigInterface
         'formCaptchaImage'           => Helper\Captcha\Image::class,
         'FormCaptchaImage'           => Helper\Captcha\Image::class,
         'captcharecaptcha'           => Helper\Captcha\ReCaptcha::class,
+        // weird alias used by Zend\Captcha
+        'captcha/recaptcha'          => Helper\Captcha\ReCaptcha::class,
         'captcha_recaptcha'          => Helper\Captcha\ReCaptcha::class,
         'captchaRecaptcha'           => Helper\Captcha\ReCaptcha::class,
         'CaptchaRecaptcha'           => Helper\Captcha\ReCaptcha::class,
